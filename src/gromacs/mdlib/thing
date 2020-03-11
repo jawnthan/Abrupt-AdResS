@@ -1,0 +1,166 @@
+diff -r ./adress.c /home/mi/johnwhittake/software/gromacs-5.1-officialRelease/src/gromacs/mdlib/adress.c
+113,114c113,114
+<         /*tmp = cos((dl-adressr)*M_PI/2/adressw);*/
+<         return 0.5;
+---
+>         tmp = cos((dl-adressr)*M_PI/2/adressw);
+>         return tmp*tmp;
+171d170
+< //	printf("k0 %d, k1 %d\n", k0, k1);
+234d232
+< //	    printf("wf[k0] %f\n", wf[k0]);
+247a246
+> 
+536d534
+< 
+Only in .: .adress.h.swp
+diff -r ./mdebin.c /home/mi/johnwhittake/software/gromacs-5.1-officialRelease/src/gromacs/mdlib/mdebin.c
+308c308
+<     /* for adress simulations, most energy terms are not meaningfull, and thus disabled
+---
+>     /* for adress simulations, most energy terms are not meaningfull, and thus disabled*/
+310c310
+<     {*/
+---
+>     {
+327c327
+<    /* } */
+---
+>     }
+diff -r ./ns.c /home/mi/johnwhittake/software/gromacs-5.1-officialRelease/src/gromacs/mdlib/ns.c
+267,269c267,268
+< /* chk */
+< //        if ((fr->adress_type != eAdressOff) && (i >= fr->nnblists/2))
+<         if ((fr->adress_type != eAdressOff))
+---
+> 
+>         if ((fr->adress_type != eAdressOff) && (i >= fr->nnblists/2))
+271,272c270
+< 	/*  type = GMX_NBLIST_INTERACTION_ADRESS; */
+<             type = GMX_NBLIST_INTERACTION_STANDARD;
+---
+>             type = GMX_NBLIST_INTERACTION_ADRESS;
+606d603
+<     real         *wf; 
+610d606
+<     gmx_bool      b_hybrid;
+613d608
+<     gmx_bool      bEnergyGroupCG; 
+622d616
+<     wf      = md->wf; 
+634c628
+<     if (md->nPerturbed ) 
+---
+>     if (md->nPerturbed)
+692d685
+< /*    if (!bFreeEnergy ||  (fr->adress_type != eAdressOff)) */
+856,859d848
+< 		/* chk */
+<                 //    bEnergyGroupCG = !egp_explicit(fr, igid); 
+< 		/* chk */
+< 
+862d850
+< 
+882d869
+< 
+884,894d870
+<       /* change 7.11.2017 chk
+<                         if ( fr->adress_type != eAdressOff ) 
+< 		        { 
+<                             if ( ( !bEnergyGroupCG && ( wf[i_atom] <= GMX_REAL_EPS || wf[jj] <= GMX_REAL_EPS ) ) || 
+< 			       ( ( bEnergyGroupCG ) && ( wf[i_atom] >= GMX_REAL_EPS || wf[jj] >= GMX_REAL_EPS ) ))*/
+< //			       ( ( bEnergyGroupCG ) && ( wf[i_atom] >= GMX_REAL_EPS && wf[jj] >= GMX_REAL_EPS ) ))
+< //                            {
+< //                                continue;
+< //                            } 
+< //			}
+<       /* change 7.11.2017 chk*/
+1011,1014d986
+< 
+< 		    /* chk 
+<                     bEnergyGroupCG = !egp_explicit(fr, igid); */
+< 
+1025,1034d996
+< 			    /* chk 
+< 
+<                         if ( ( !bEnergyGroupCG && ( wf[i_atom] <= GMX_REAL_EPS || wf[jj] <= GMX_REAL_EPS ) ) || 
+< 			     ( ( bEnergyGroupCG ) && ( wf[i_atom] >= GMX_REAL_EPS && wf[jj] >= GMX_REAL_EPS ) ) 
+< 			     )
+< 
+<                             {
+<                                 continue;
+<                             } */
+< 
+1291,1303d1252
+<       /* change 7.11.2017 chk*/     
+<                    /* if ( fr->adress_type != eAdressOff ) 
+< 		       { */
+<                         if ( ( !bEnergyGroupCG && ( wf[i_atom] <= GMX_REAL_EPS || wf[jj] <= GMX_REAL_EPS ) ) || 
+< 			     ( ( bEnergyGroupCG ) && ( wf[i_atom] >= GMX_REAL_EPS && wf[jj] >= GMX_REAL_EPS ) ) 
+< 			  //   ( ( bEnergyGroupCG ) && ( wf[i_atom] >= GMX_REAL_EPS || wf[jj] >= GMX_REAL_EPS ) ) 
+< 			     )
+< 
+<                             {
+<                                 continue;
+<                             } 
+<                     /*    } */
+< /*    old version from normal GC-AdResS before october 7                 
+1313d1261
+< */
+1321,1322c1269,1276
+< 				    /* chk: removed the !b_hybrid if loops */
+<                                add_j_to_nblist(coul, jj, bLR);
+---
+>                                 if (!b_hybrid)
+>                                 {
+>                                     add_j_to_nblist(coul, jj, bLR);
+>                                 }
+>                                 else
+>                                 {
+>                                     add_j_to_nblist(coul_adress, jj, bLR);
+>                                 }
+1328a1283,1284
+>                                 if (!b_hybrid)
+>                                 {
+1329a1286,1290
+>                                 }
+>                                 else
+>                                 {
+>                                     add_j_to_nblist(vdw_adress, jj, bLR);
+>                                 }
+1337a1299,1300
+>                                     if (!b_hybrid)
+>                                     {
+1338a1302,1306
+>                                     }
+>                                     else
+>                                     {
+>                                         add_j_to_nblist(vdwc_adress, jj, bLR);
+>                                     }
+1341a1310,1311
+>                                     if (!b_hybrid)
+>                                     {
+1342a1313,1318
+>                                     }
+>                                     else
+>                                     {
+>                                         add_j_to_nblist(vdw_adress, jj, bLR);
+>                                     }
+> 
+1346a1323,1324
+>                                 if (!b_hybrid)
+>                                 {
+1347a1326,1330
+>                                 }
+>                                 else
+>                                 {
+>                                     add_j_to_nblist(coul_adress, jj, bLR);
+>                                 }
+2691d2673
+<     real     b_hybrid;
+2694d2675
+<     gmx_bool     bEnergyGroupCG;
+2796d2776
+< /* chk */
+2812d2791
+< /* chk */

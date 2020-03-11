@@ -1,0 +1,212 @@
+gromacs/simd/impl_ibm_vmx/impl_ibm_vmx.h:     * a load adress. However, at least with gcc-4.8.2 the bytes
+gromacs/tools/compare.c:static void cmp_adress(FILE *fp, t_adress *ad1, t_adress *ad2,
+gromacs/tools/compare.c:    cmp_int(fp, "ir->adress->type", -1, ad1->type, ad2->type);
+gromacs/tools/compare.c:    cmp_real(fp, "ir->adress->const_wf", -1, ad1->const_wf, ad2->const_wf, ftol, abstol);
+gromacs/tools/compare.c:    cmp_real(fp, "ir->adress->ex_width", -1, ad1->ex_width, ad2->ex_width, ftol, abstol);
+gromacs/tools/compare.c:    cmp_real(fp, "ir->adress->hy_width", -1, ad1->hy_width, ad2->hy_width, ftol, abstol);
+gromacs/tools/compare.c:    cmp_int(fp, "ir->adress->icor", -1, ad1->icor, ad2->icor);
+gromacs/tools/compare.c:    cmp_int(fp, "ir->adress->site", -1, ad1->site, ad2->site);
+gromacs/tools/compare.c:    cmp_rvec(fp, "ir->adress->refs", -1, ad1->refs, ad2->refs, ftol, abstol);
+gromacs/tools/compare.c:    cmp_real(fp, "ir->adress->ex_forcecap", -1, ad1->ex_forcecap, ad2->ex_forcecap, ftol, abstol);
+gromacs/tools/compare.c:        cmp_adress(fp, ir1->adress, ir2->adress, ftol, abstol);
+gromacs/mdlib/broadcaststructs.cpp:static void bc_adress(const t_commrec *cr, t_adress *adress)
+gromacs/mdlib/broadcaststructs.cpp:    block_bc(cr, *adress);
+gromacs/mdlib/broadcaststructs.cpp:    if (adress->n_tf_grps > 0)
+gromacs/mdlib/broadcaststructs.cpp:        snew_bc(cr, adress->tf_table_index, adress->n_tf_grps);
+gromacs/mdlib/broadcaststructs.cpp:        nblock_bc(cr, adress->n_tf_grps, adress->tf_table_index);
+gromacs/mdlib/broadcaststructs.cpp:    if (adress->n_energy_grps > 0)
+gromacs/mdlib/broadcaststructs.cpp:        snew_bc(cr, adress->group_explicit, adress->n_energy_grps);
+gromacs/mdlib/broadcaststructs.cpp:        nblock_bc(cr, adress->n_energy_grps, adress->group_explicit);
+gromacs/mdlib/broadcaststructs.cpp:        snew_bc(cr, inputrec->adress, 1);
+gromacs/mdlib/broadcaststructs.cpp:        bc_adress(cr, inputrec->adress);
+gromacs/mdlib/mdebin.c:    /* for adress simulations, most energy terms are not meaningfull, and thus disabled
+gromacs/mdlib/mdebin.c:    /* for adress simulations, most energy terms are not meaningfull, and thus disabled*/
+gromacs/mdlib/tables.c:    if (fr->adress_type == eAdressSphere)
+gromacs/mdlib/tables.c:    if (fr->adress_type == eAdressXSplit && (rtab < box[0][0]/2))
+gromacs/mdlib/tables.c:                  "\tshould extend to at least for spherical adress"
+gromacs/mdlib/nbnxn_ocl/nbnxn_ocl.cpp:    device_size_t_size_bits = dinfo->adress_bits;
+gromacs/mdlib/mdatom.cpp:        /* Initialize AdResS weighting functions to adressw */
+gromacs/mdlib/mdatom.cpp:            if (ir->adress->n_tf_grps > 0)
+gromacs/mdlib/mdatom.cpp:                for (g = 0; g < ir->adress->n_tf_grps; g++)
+gromacs/mdlib/mdatom.cpp:                    if (md->cENER[i] == ir->adress->tf_table_index[g])
+gromacs/mdlib/ns.c:#include "adress.h"
+gromacs/mdlib/ns.c://        if ((fr->adress_type != eAdressOff) && (i >= fr->nnblists/2))
+gromacs/mdlib/ns.c:        if ((fr->adress_type != eAdressOff))
+gromacs/mdlib/ns.c:/*    if (!bFreeEnergy ||  (fr->adress_type != eAdressOff)) */
+gromacs/mdlib/ns.c:                        if ( fr->adress_type != eAdressOff ) 
+gromacs/mdlib/ns.c:put_in_list_adress(gmx_bool              bHaveVdW[],
+gromacs/mdlib/ns.c:    t_nblist  *   vdwc_adress  = NULL;
+gromacs/mdlib/ns.c:    t_nblist  *   vdw_adress   = NULL;
+gromacs/mdlib/ns.c:    t_nblist  *   coul_adress  = NULL;
+gromacs/mdlib/ns.c:    int           i, j, jcg, igid, gid, nbl_ind, nbl_ind_adress;
+gromacs/mdlib/ns.c:    t_nblist     *nlist, *nlist_adress;
+gromacs/mdlib/ns.c:        nbl_ind_adress = 1;
+gromacs/mdlib/ns.c:        nbl_ind_adress = nbl_ind+fr->nnblists/2;
+gromacs/mdlib/ns.c:        nlist_adress = fr->nblists[nbl_ind_adress].nlist_lr;
+gromacs/mdlib/ns.c:        nlist_adress = fr->nblists[nbl_ind_adress].nlist_sr;
+gromacs/mdlib/ns.c:    vdwc_adress = &nlist_adress[eNL_VDWQQ];
+gromacs/mdlib/ns.c:    vdw_adress  = &nlist_adress[eNL_VDW];
+gromacs/mdlib/ns.c:    coul_adress = &nlist_adress[eNL_QQ];
+gromacs/mdlib/ns.c:            new_i_nblist(vdwc_adress, i_atom, shift, gid);
+gromacs/mdlib/ns.c:            new_i_nblist(vdw_adress, i_atom, shift, gid);
+gromacs/mdlib/ns.c:            new_i_nblist(coul_adress, i_atom, shift, gid);
+gromacs/mdlib/ns.c:                     * b_hybrid=true are placed into the _adress neighbour lists and
+gromacs/mdlib/ns.c:                   /* if ( fr->adress_type != eAdressOff ) 
+gromacs/mdlib/ns.c:            close_i_nblist(vdw_adress);
+gromacs/mdlib/ns.c:            close_i_nblist(coul_adress);
+gromacs/mdlib/ns.c:            close_i_nblist(vdwc_adress);
+gromacs/mdlib/ns.c:                    if (fr->adress_type != eAdressOff)
+gromacs/mdlib/ns.c:    if (fr->adress_type == eAdressOff)
+gromacs/mdlib/ns.c:        put_in_list = put_in_list_adress;
+gromacs/mdlib/sim_util.cpp:#include "adress.h"
+gromacs/mdlib/sim_util.cpp:    bDoAdressWF   = ((fr->adress_type != eAdressOff));
+gromacs/mdlib/sim_util.cpp:    /* update adress weight beforehand */
+gromacs/mdlib/sim_util.cpp:        /* need pbc for adress weight calculation with pbc_dx */
+gromacs/mdlib/sim_util.cpp:        if (fr->adress_site == eAdressSITEcog)
+gromacs/mdlib/sim_util.cpp:            update_adress_weights_cog(top->idef.iparams, top->idef.il, x, fr, mdatoms,
+gromacs/mdlib/sim_util.cpp:        else if (fr->adress_site == eAdressSITEcom)
+gromacs/mdlib/sim_util.cpp:            update_adress_weights_com(fplog, cg0, cg1, &(top->cgs), x, fr, mdatoms,
+gromacs/mdlib/sim_util.cpp:        else if (fr->adress_site == eAdressSITEatomatom)
+gromacs/mdlib/sim_util.cpp:            update_adress_weights_atom_per_atom(cg0, cg1, &(top->cgs), x, fr, mdatoms,
+gromacs/mdlib/sim_util.cpp:            update_adress_weights_atom(cg0, cg1, &(top->cgs), x, fr, mdatoms,
+gromacs/mdlib/sim_util.cpp:        if (bDoAdressWF && fr->adress_icor == eAdressICThermoForce)
+gromacs/mdlib/sim_util.cpp:            adress_thermo_force(start, homenr, &(top->cgs), x, fr->f_novirsum, fr, mdatoms,
+gromacs/mdlib/forcerec.cpp:static void make_adress_tf_tables(FILE *fp, const output_env_t oenv,
+gromacs/mdlib/forcerec.cpp:    snew(fr->atf_tabs, ir->adress->n_tf_grps);
+gromacs/mdlib/forcerec.cpp:    for (i = 0; i < ir->adress->n_tf_grps; i++)
+gromacs/mdlib/forcerec.cpp:        j = ir->adress->tf_table_index[i]; /* get energy group index */
+gromacs/mdlib/forcerec.cpp:            fprintf(fp, "loading tf table for energygrp index %d from %s\n", ir->adress->tf_table_index[i], buf);
+gromacs/mdlib/forcerec.cpp:        fr->adress_type           = ir->adress->type;
+gromacs/mdlib/forcerec.cpp:        fr->adress_const_wf       = ir->adress->const_wf;
+gromacs/mdlib/forcerec.cpp:        fr->adress_ex_width       = ir->adress->ex_width;
+gromacs/mdlib/forcerec.cpp:        fr->adress_hy_width       = ir->adress->hy_width;
+gromacs/mdlib/forcerec.cpp:        fr->adress_icor           = ir->adress->icor;
+gromacs/mdlib/forcerec.cpp:        fr->adress_site           = ir->adress->site;
+gromacs/mdlib/forcerec.cpp:        fr->adress_ex_forcecap    = ir->adress->ex_forcecap;
+gromacs/mdlib/forcerec.cpp:        fr->adress_do_hybridpairs = ir->adress->do_hybridpairs;
+gromacs/mdlib/forcerec.cpp:        snew(fr->adress_group_explicit, ir->adress->n_energy_grps);
+gromacs/mdlib/forcerec.cpp:        for (i = 0; i < ir->adress->n_energy_grps; i++)
+gromacs/mdlib/forcerec.cpp:            fr->adress_group_explicit[i] = ir->adress->group_explicit[i];
+gromacs/mdlib/forcerec.cpp:        fr->n_adress_tf_grps = ir->adress->n_tf_grps;
+gromacs/mdlib/forcerec.cpp:        snew(fr->adress_tf_table_index, fr->n_adress_tf_grps);
+gromacs/mdlib/forcerec.cpp:        for (i = 0; i < fr->n_adress_tf_grps; i++)
+gromacs/mdlib/forcerec.cpp:            fr->adress_tf_table_index[i] = ir->adress->tf_table_index[i];
+gromacs/mdlib/forcerec.cpp:        copy_rvec(ir->adress->refs, fr->adress_refs);
+gromacs/mdlib/forcerec.cpp:        fr->adress_type           = eAdressOff;
+gromacs/mdlib/forcerec.cpp:        fr->adress_do_hybridpairs = FALSE;
+gromacs/mdlib/forcerec.cpp:                       (fr->adress_icor != eAdressICOff)
+gromacs/mdlib/forcerec.cpp:    if (ir->adress)
+gromacs/mdlib/forcerec.cpp:            if (ir->adress)
+gromacs/mdlib/forcerec.cpp:                        if (ir->adress)
+gromacs/mdlib/forcerec.cpp:    if (fr->adress_icor == eAdressICThermoForce)
+gromacs/mdlib/forcerec.cpp:        if (ir->adress->n_tf_grps > 0)
+gromacs/mdlib/forcerec.cpp:            make_adress_tf_tables(fp, oenv, fr, ir, tabfn, mtop, box);
+gromacs/mdlib/forcerec.cpp:                gmx_setup_adress_kernels(fp,bGenericKernelOnly);
+gromacs/legacyheaders/types/forcerec.h:    int             adress_type;
+gromacs/legacyheaders/types/forcerec.h:    gmx_bool        badress_tf_full_box;
+gromacs/legacyheaders/types/forcerec.h:    real            adress_const_wf;
+gromacs/legacyheaders/types/forcerec.h:    real            adress_ex_width;
+gromacs/legacyheaders/types/forcerec.h:    real            adress_hy_width;
+gromacs/legacyheaders/types/forcerec.h:    int             adress_icor;
+gromacs/legacyheaders/types/forcerec.h:    int             adress_site;
+gromacs/legacyheaders/types/forcerec.h:    rvec            adress_refs;
+gromacs/legacyheaders/types/forcerec.h:    int             n_adress_tf_grps;
+gromacs/legacyheaders/types/forcerec.h:    int           * adress_tf_table_index;
+gromacs/legacyheaders/types/forcerec.h:    int            *adress_group_explicit;
+gromacs/legacyheaders/types/forcerec.h:    real            adress_ex_forcecap;
+gromacs/legacyheaders/types/forcerec.h:    gmx_bool        adress_do_hybridpairs;
+gromacs/legacyheaders/types/inputrec.h:    real     ex_forcecap;    /* in the hybrid zone, cap forces large then this to adress_ex_forcecap */
+gromacs/legacyheaders/types/inputrec.h:    gmx_bool do_hybridpairs; /* If true pair interaction forces are also scaled in an adress way*/
+gromacs/legacyheaders/types/inputrec.h:    int    * tf_table_index; /* contains mapping of energy group index -> i-th adress tf table*/
+gromacs/legacyheaders/types/inputrec.h:} t_adress;
+gromacs/legacyheaders/types/inputrec.h:    t_adress       *adress;        /* The data for adress simulations */
+gromacs/gmxpreprocess/grompp.c:        if ((ir->adress->const_wf > 1) || (ir->adress->const_wf < 0))
+gromacs/gmxpreprocess/readir.h:void read_adressparams(int *ninp_p, t_inpfile **inp_p, t_adress *adress, warninp_t wi);
+gromacs/gmxpreprocess/readir.h:void do_adress_index(t_adress *adress, gmx_groups_t *groups, char **gnames, t_grpopts *opts, warninp_t wi);
+gromacs/gmxpreprocess/readir.h:/* Generate adress groups */
+gromacs/gmxpreprocess/readir.c:    EETYPE("adress",       ir->bAdress, yesno_names);
+gromacs/gmxpreprocess/readir.c:        snew(ir->adress, 1);
+gromacs/gmxpreprocess/readir.c:        read_adressparams(&ninp, &inp, ir->adress, wi);
+gromacs/gmxpreprocess/readir.c:        do_adress_index(ir->adress, groups, gnames, &(ir->opts), wi);
+gromacs/gmxpreprocess/readadress.c:static char adress_refs[STRLEN], adress_tf_grp_names[STRLEN], adress_cg_grp_names[STRLEN];
+gromacs/gmxpreprocess/readadress.c:void read_adressparams(int *ninp_p, t_inpfile **inp_p, t_adress *adress, warninp_t wi)
+gromacs/gmxpreprocess/readadress.c:    int         nadress_refs, i;
+gromacs/gmxpreprocess/readadress.c:    EETYPE("adress_type",                adress->type,         eAdresstype_names);
+gromacs/gmxpreprocess/readadress.c:    RTYPE ("adress_const_wf",            adress->const_wf,     1);
+gromacs/gmxpreprocess/readadress.c:    RTYPE ("adress_ex_width",            adress->ex_width,     0);
+gromacs/gmxpreprocess/readadress.c:    RTYPE ("adress_hy_width",            adress->hy_width,     0);
+gromacs/gmxpreprocess/readadress.c:    RTYPE ("adress_ex_forcecap",         adress->ex_forcecap,     0);
+gromacs/gmxpreprocess/readadress.c:    EETYPE("adress_interface_correction", adress->icor,         eAdressICtype_names);
+gromacs/gmxpreprocess/readadress.c:    EETYPE("adress_site",                adress->site,         eAdressSITEtype_names);
+gromacs/gmxpreprocess/readadress.c:    STYPE ("adress_reference_coords",    adress_refs,             NULL);
+gromacs/gmxpreprocess/readadress.c:    STYPE ("adress_tf_grp_names",        adress_tf_grp_names,     NULL);
+gromacs/gmxpreprocess/readadress.c:    STYPE ("adress_cg_grp_names",        adress_cg_grp_names,     NULL);
+gromacs/gmxpreprocess/readadress.c:    EETYPE("adress_do_hybridpairs",      adress->do_hybridpairs, yesno_names);
+gromacs/gmxpreprocess/readadress.c:    nadress_refs = str_nelem(adress_refs, MAXPTR, ptr1);
+gromacs/gmxpreprocess/readadress.c:    for (i = 0; (i < nadress_refs); i++) /*read vector components*/
+gromacs/gmxpreprocess/readadress.c:        adress->refs[i] = strtod(ptr1[i], NULL);
+gromacs/gmxpreprocess/readadress.c:        adress->refs[i] = 0;
+gromacs/gmxpreprocess/readadress.c:void do_adress_index(t_adress *adress, gmx_groups_t *groups, char **gnames, t_grpopts *opts, warninp_t wi)
+gromacs/gmxpreprocess/readadress.c:    int      nadress_cg_grp_names, nadress_tf_grp_names;
+gromacs/gmxpreprocess/readadress.c:    snew(adress->group_explicit, nr);
+gromacs/gmxpreprocess/readadress.c:        adress->group_explicit[i] = TRUE;
+gromacs/gmxpreprocess/readadress.c:    adress->n_energy_grps = nr;
+gromacs/gmxpreprocess/readadress.c:    nadress_cg_grp_names = str_nelem(adress_cg_grp_names, MAXPTR, ptr1);
+gromacs/gmxpreprocess/readadress.c:    if (nadress_cg_grp_names > 0)
+gromacs/gmxpreprocess/readadress.c:        for (i = 0; i < nadress_cg_grp_names; i++)
+gromacs/gmxpreprocess/readadress.c:            adress->group_explicit[k] = FALSE;
+gromacs/gmxpreprocess/readadress.c:                if (!(adress->group_explicit[k] == adress->group_explicit[j]))
+gromacs/gmxpreprocess/readadress.c:        warning(wi, "For an AdResS simulation at least one coarse-grained energy group has to be specified in adress_cg_grp_names");
+gromacs/gmxpreprocess/readadress.c:    nadress_tf_grp_names = str_nelem(adress_tf_grp_names, MAXPTR, ptr1);
+gromacs/gmxpreprocess/readadress.c:    adress->n_tf_grps    = nadress_tf_grp_names;
+gromacs/gmxpreprocess/readadress.c:    snew(adress->tf_table_index, nadress_tf_grp_names);
+gromacs/gmxpreprocess/readadress.c:    if (nadress_tf_grp_names > 0)
+gromacs/gmxpreprocess/readadress.c:        for (i = 0; i < nadress_tf_grp_names; i++)
+gromacs/gmxpreprocess/readadress.c:            adress->tf_table_index[i] = k;
+gromacs/gmxpreprocess/readadress.c:            if (adress->group_explicit[k])
+gromacs/gmxpreprocess/readadress.c:                gmx_fatal(FARGS, "Thermodynamic force group %s is not a coarse-grained group in adress_cg_grp_names. The thermodynamic force has to act on the coarse-grained vsite of a molecule.\n", ptr1[i]);
+gromacs/fileio/tpxio.c:                snew(ir->adress, 1);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->type);
+gromacs/fileio/tpxio.c:            gmx_fio_do_real(fio, ir->adress->const_wf);
+gromacs/fileio/tpxio.c:            gmx_fio_do_real(fio, ir->adress->ex_width);
+gromacs/fileio/tpxio.c:            gmx_fio_do_real(fio, ir->adress->hy_width);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->icor);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->site);
+gromacs/fileio/tpxio.c:            gmx_fio_do_rvec(fio, ir->adress->refs);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->n_tf_grps);
+gromacs/fileio/tpxio.c:            gmx_fio_do_real(fio, ir->adress->ex_forcecap);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->n_energy_grps);
+gromacs/fileio/tpxio.c:            gmx_fio_do_int(fio, ir->adress->do_hybridpairs);
+gromacs/fileio/tpxio.c:                snew(ir->adress->tf_table_index, ir->adress->n_tf_grps);
+gromacs/fileio/tpxio.c:            if (ir->adress->n_tf_grps > 0)
+gromacs/fileio/tpxio.c:                gmx_fio_ndo_int(fio, ir->adress->tf_table_index, ir->adress->n_tf_grps);
+gromacs/fileio/tpxio.c:                snew(ir->adress->group_explicit, ir->adress->n_energy_grps);
+gromacs/fileio/tpxio.c:            if (ir->adress->n_energy_grps > 0)
+gromacs/fileio/tpxio.c:                gmx_fio_ndo_int(fio, ir->adress->group_explicit, ir->adress->n_energy_grps);
+gromacs/gmxlib/txtdump.c:        PS("adress", EBOOL(ir->bAdress));
+gromacs/gmxlib/txtdump.c:            PS("adress-type", EADRESSTYPE(ir->adress->type));
+gromacs/gmxlib/txtdump.c:            PR("adress-const-wf", ir->adress->const_wf);
+gromacs/gmxlib/txtdump.c:            PR("adress-ex-width", ir->adress->ex_width);
+gromacs/gmxlib/txtdump.c:            PR("adress-hy-width", ir->adress->hy_width);
+gromacs/gmxlib/txtdump.c:            PR("adress-ex-forcecap", ir->adress->ex_forcecap);
+gromacs/gmxlib/txtdump.c:            PS("adress-interface-correction", EADRESSICTYPE(ir->adress->icor));
+gromacs/gmxlib/txtdump.c:            PS("adress-site", EADRESSSITETYPE(ir->adress->site));
+gromacs/gmxlib/txtdump.c:            pr_rvec(fp, indent, "adress-reference-coords", ir->adress->refs, DIM, TRUE);
+gromacs/gmxlib/txtdump.c:            PS("adress-do-hybridpairs", EBOOL(ir->adress->do_hybridpairs));
+gromacs/gmxlib/ocl_tools/oclutils.h:    int                 adress_bits;
+gromacs/gmxlib/nonbonded/nb_generic_adress.h:#ifndef _nb_generic_adress_h_
+gromacs/gmxlib/nonbonded/nb_generic_adress.h:#define _nb_generic_adress_h_
+gromacs/gmxlib/nonbonded/nb_generic_adress.h:gmx_nb_generic_adress_kernel(t_nblist *                nlist,
+gromacs/gmxlib/nonbonded/nonbonded.c:#include "gromacs/gmxlib/nonbonded/nb_generic_adress.h"
+gromacs/gmxlib/nonbonded/nonbonded.c:        nl->kernelptr_vf       = (void *) gmx_nb_generic_adress_kernel;
+gromacs/gmxlib/nonbonded/nonbonded.c:        nl->kernelptr_f        = (void *) gmx_nb_generic_adress_kernel;
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:#include "nb_generic_adress.h"
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:gmx_nb_generic_adress_kernel(t_nblist *                nlist,
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:    force_cap           = fr->adress_ex_forcecap;
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:        bCG    = !fr->adress_group_explicit[egp_nr];
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:/* MOD 1 : simplify "if" from old adress */
+gromacs/gmxlib/nonbonded/nb_generic_adress.c:    /* Estimate flops, average for generic adress kernel:
+gromacs/gmxlib/nonbonded/CMakeLists.txt:#le(GLOB NONBONDED_SOURCES nb_kernel_adress_c/*.c)
+gromacs/gmxlib/nonbonded/nb_kernel_adress_c/nb_kernel_adress_template_c.pre:    force_cap        = fr->adress_ex_forcecap;
+gromacs/gmxlib/gpu_utils/gpu_utils_ocl.cpp:                    gpu_info->gpu_dev[device_index].adress_bits = 0;
+gromacs/gmxlib/gpu_utils/gpu_utils_ocl.cpp:                    clGetDeviceInfo(ocl_device_ids[j], CL_DEVICE_ADDRESS_BITS, sizeof(gpu_info->gpu_dev[device_index].adress_bits), &(gpu_info->gpu_dev[device_index].adress_bits), NULL);

@@ -1,0 +1,404 @@
+Determining if files io.h exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_19da2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_19da2.dir/build.make CMakeFiles/cmTC_19da2.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19da2.dir/HAVE_IO_H.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter     -o CMakeFiles/cmTC_19da2.dir/HAVE_IO_H.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CheckIncludeFiles/HAVE_IO_H.c
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CheckIncludeFiles/HAVE_IO_H.c:2:10: fatal error: io.h: No such file or directory
+ #include <io.h>
+          ^~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_19da2.dir/build.make:66: CMakeFiles/cmTC_19da2.dir/HAVE_IO_H.c.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_19da2/fast] Error 2
+
+Source:
+/* */
+#include <io.h>
+
+
+int main(void){return 0;}
+
+Determining if the memalign exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d07a6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d07a6.dir/build.make CMakeFiles/cmTC_d07a6.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d07a6.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_d07a6.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘memalign’ was not declared in this scope
+   return ((int*)(&memalign))[argc];
+                   ^~~~~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘main’
+   return ((int*)(&memalign))[argc];
+                   ^~~~~~~~
+                   main
+make[1]: *** [CMakeFiles/cmTC_d07a6.dir/build.make:66: CMakeFiles/cmTC_d07a6.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_d07a6/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memalign
+  return ((int*)(&memalign))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _aligned_malloc exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5fb2b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5fb2b.dir/build.make CMakeFiles/cmTC_5fb2b.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5fb2b.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_5fb2b.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘_aligned_malloc’ was not declared in this scope
+   return ((int*)(&_aligned_malloc))[argc];
+                   ^~~~~~~~~~~~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘aligned_alloc’
+   return ((int*)(&_aligned_malloc))[argc];
+                   ^~~~~~~~~~~~~~~
+                   aligned_alloc
+make[1]: *** [CMakeFiles/cmTC_5fb2b.dir/build.make:66: CMakeFiles/cmTC_5fb2b.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_5fb2b/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _aligned_malloc
+  return ((int*)(&_aligned_malloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _fileno exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_05a24/fast"
+/usr/bin/make -f CMakeFiles/cmTC_05a24.dir/build.make CMakeFiles/cmTC_05a24.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_05a24.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_05a24.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘_fileno’ was not declared in this scope
+   return ((int*)(&_fileno))[argc];
+                   ^~~~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘fileno’
+   return ((int*)(&_fileno))[argc];
+                   ^~~~~~~
+                   fileno
+make[1]: *** [CMakeFiles/cmTC_05a24.dir/build.make:66: CMakeFiles/cmTC_05a24.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_05a24/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _fileno
+  return ((int*)(&_fileno))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _commit exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_77de8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77de8.dir/build.make CMakeFiles/cmTC_77de8.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_77de8.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_77de8.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: io.h: No such file or directory
+ #include <io.h>
+          ^~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_77de8.dir/build.make:66: CMakeFiles/cmTC_77de8.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_77de8/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <io.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _commit
+  return ((int*)(&_commit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the rsqrt exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_60e65/fast"
+/usr/bin/make -f CMakeFiles/cmTC_60e65.dir/build.make CMakeFiles/cmTC_60e65.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_60e65.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_60e65.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘rsqrt’ was not declared in this scope
+   return ((int*)(&rsqrt))[argc];
+                   ^~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘sqrt’
+   return ((int*)(&rsqrt))[argc];
+                   ^~~~~
+                   sqrt
+make[1]: *** [CMakeFiles/cmTC_60e65.dir/build.make:66: CMakeFiles/cmTC_60e65.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_60e65/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef rsqrt
+  return ((int*)(&rsqrt))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the rsqrtf exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3b688/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b688.dir/build.make CMakeFiles/cmTC_3b688.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3b688.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -Wundef -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function     -o CMakeFiles/cmTC_3b688.dir/CheckSymbolExists.cxx.o -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘rsqrtf’ was not declared in this scope
+   return ((int*)(&rsqrtf))[argc];
+                   ^~~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘sqrtf’
+   return ((int*)(&rsqrtf))[argc];
+                   ^~~~~~
+                   sqrtf
+make[1]: *** [CMakeFiles/cmTC_3b688.dir/build.make:66: CMakeFiles/cmTC_3b688.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_3b688/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef rsqrtf
+  return ((int*)(&rsqrtf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_697c4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_697c4.dir/build.make CMakeFiles/cmTC_697c4.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_697c4.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter     -o CMakeFiles/cmTC_697c4.dir/CheckSymbolExists.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_697c4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_697c4.dir/link.txt --verbose=1
+/usr/bin/cc  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter      -rdynamic CMakeFiles/cmTC_697c4.dir/CheckSymbolExists.c.o  -o cmTC_697c4 
+/usr/bin/ld: CMakeFiles/cmTC_697c4.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_697c4.dir/build.make:87: cmTC_697c4] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_697c4/fast] Error 2
+
+File /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b955d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b955d.dir/build.make CMakeFiles/cmTC_b955d.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b955d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b955d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b955d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b955d.dir/link.txt --verbose=1
+/usr/bin/cc  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_b955d.dir/CheckFunctionExists.c.o  -o cmTC_b955d -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b955d.dir/build.make:87: cmTC_b955d] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_b955d/fast] Error 2
+
+
+Performing C SOURCE FILE Test _isfinite_compile_ok failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0cf03/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0cf03.dir/build.make CMakeFiles/cmTC_0cf03.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0cf03.dir/src.c.o
+/usr/bin/cc  -I/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/math.h  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_isfinite_compile_ok   -o CMakeFiles/cmTC_0cf03.dir/src.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:4:3: warning: implicit declaration of function ‘_isfinite’; did you mean ‘isfinite’? [-Wimplicit-function-declaration]
+   _isfinite(f);
+   ^~~~~~~~~
+   isfinite
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:4:3: warning: ‘f’ is used uninitialized in this function [-Wuninitialized]
+   _isfinite(f);
+   ^~~~~~~~~~~~
+Linking C executable cmTC_0cf03
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0cf03.dir/link.txt --verbose=1
+/usr/bin/cc  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_isfinite_compile_ok    -rdynamic CMakeFiles/cmTC_0cf03.dir/src.c.o  -o cmTC_0cf03 -lm 
+/usr/bin/ld: CMakeFiles/cmTC_0cf03.dir/src.c.o: in function `main':
+src.c:(.text+0x13): undefined reference to `_isfinite'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_0cf03.dir/build.make:87: cmTC_0cf03] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0cf03/fast] Error 2
+
+Source file was:
+#include <math.h>
+int main(void) {
+  float f;
+  _isfinite(f);
+}
+Performing C SOURCE FILE Test _finite_compile_ok failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_33b42/fast"
+/usr/bin/make -f CMakeFiles/cmTC_33b42.dir/build.make CMakeFiles/cmTC_33b42.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_33b42.dir/src.c.o
+/usr/bin/cc  -I/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/float.h  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_finite_compile_ok   -o CMakeFiles/cmTC_33b42.dir/src.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:4:3: warning: implicit declaration of function ‘_finite’ [-Wimplicit-function-declaration]
+   _finite(f);
+   ^~~~~~~
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:4:3: warning: ‘f’ is used uninitialized in this function [-Wuninitialized]
+   _finite(f);
+   ^~~~~~~~~~
+Linking C executable cmTC_33b42
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33b42.dir/link.txt --verbose=1
+/usr/bin/cc  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_finite_compile_ok    -rdynamic CMakeFiles/cmTC_33b42.dir/src.c.o  -o cmTC_33b42 
+/usr/bin/ld: CMakeFiles/cmTC_33b42.dir/src.c.o: in function `main':
+src.c:(.text+0x13): undefined reference to `_finite'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_33b42.dir/build.make:87: cmTC_33b42] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_33b42/fast] Error 2
+
+Source file was:
+#include <float.h>
+int main(void) {
+  float f;
+  _finite(f);
+}
+Performing C SOURCE FILE Test _callconv___vectorcall failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2b70b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2b70b.dir/build.make CMakeFiles/cmTC_2b70b.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b70b.dir/src.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_callconv___vectorcall   -o CMakeFiles/cmTC_2b70b.dir/src.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:1:18: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘f’
+ int __vectorcall f(int i) {return i;} int main(void) {return f(0);}
+                  ^
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:1:62: warning: implicit declaration of function ‘f’ [-Wimplicit-function-declaration]
+ int __vectorcall f(int i) {return i;} int main(void) {return f(0);}
+                                                              ^
+make[1]: *** [CMakeFiles/cmTC_2b70b.dir/build.make:66: CMakeFiles/cmTC_2b70b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_2b70b/fast] Error 2
+
+Source file was:
+int __vectorcall f(int i) {return i;} int main(void) {return f(0);}
+Performing C SOURCE FILE Test _callconv___regcall failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7f0e3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f0e3.dir/build.make CMakeFiles/cmTC_7f0e3.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7f0e3.dir/src.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -D_callconv___regcall   -o CMakeFiles/cmTC_7f0e3.dir/src.c.o   -c /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:1:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘f’
+ int __regcall f(int i) {return i;} int main(void) {return f(0);}
+               ^
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp/src.c:1:59: warning: implicit declaration of function ‘f’ [-Wimplicit-function-declaration]
+ int __regcall f(int i) {return i;} int main(void) {return f(0);}
+                                                           ^
+make[1]: *** [CMakeFiles/cmTC_7f0e3.dir/build.make:66: CMakeFiles/cmTC_7f0e3.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_7f0e3/fast] Error 2
+
+Source file was:
+int __regcall f(int i) {return i;} int main(void) {return f(0);}
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5f8dc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5f8dc.dir/build.make CMakeFiles/cmTC_5f8dc.dir/build
+make[1]: Entering directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5f8dc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -DCHECK_FUNCTION_EXISTS=sgemm_   -o CMakeFiles/cmTC_5f8dc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5f8dc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f8dc.dir/link.txt --verbose=1
+/usr/bin/cc  -Wundef -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -DCHECK_FUNCTION_EXISTS=sgemm_    -rdynamic CMakeFiles/cmTC_5f8dc.dir/CheckFunctionExists.c.o  -o cmTC_5f8dc 
+/usr/bin/ld: CMakeFiles/cmTC_5f8dc.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_5f8dc.dir/build.make:87: cmTC_5f8dc] Error 1
+make[1]: Leaving directory '/home/mi/johnwhittake/software/gromacs-510-fcDelta/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_5f8dc/fast] Error 2
+
+
